@@ -1,5 +1,5 @@
 include(Cmake/mingw-toolchain.cmake)
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.23)
 
 project(CProjectSkeleton 
         VERSION 1.0
@@ -33,12 +33,6 @@ if(CREATE_DOXYGEN_DOC)
     include(Doc)
 endif()
 
-# App
-# add_subdirectory(App)
-
-# Utils
-# add_subdirectory(Source/App/Utils)
-
 # Scrible
 add_subdirectory(Scrible)
 
@@ -48,40 +42,10 @@ add_executable(${PROJECT_NAME}
   App/main.c
 )
 
-# set(gcc_like_c "$<COMPILE_LANG_AND_ID:C,ARMClang,AppleClang,Clang,GNU,LCC>")
-# set(msvc_c "$<COMPILE_LANG_AND_ID:C,MSVC>")
-# target_compile_options(${PROJECT_NAME} INTERFACE
-#     "$<${gcc_like_c}:$<BUILD_INTERFACE:-Wall;-Wextra;-Werror;-Wshadow;-Wformat=2;-Wunused>>"
-#   "$<${msvc_c}:$<BUILD_INTERFACE:-W3>>"
-# )
-# # target_compile_options(${PROJECT_NAME} PUBLIC
-#     # "-Wall;-Wextra;-Wshadow;-Wformat=2;-Wunused;-Werror;>"
-# # )
-# # Link FreeRTOS as a static library
-
 target_link_libraries(${PROJECT_NAME} 
+                      PUBLIC 
+                      compiler_flags)
 
-                      INTERFACE
-                       compiler_flags
-                       )
-
-target_include_directories(${PROJECT_NAME} PUBLIC
-  App
-  )
-
-# target_compile_features(${PROJECT_NAME} PUBLIC -Wall -Wextra -Werror)
-
-# message(" ENABLE_WARNINGS before compile: ${ENABLE_WARNINGS} for ${PROJECT_NAME}")
-# if (ENABLE_WARNINGS)
-#     target_set_warnings(
-#         TARGET
-#         ${PROJECT_NAME} 
-#         ENABLE
-#         ${ENABLE_WARNINGS}
-#         AS_ERRORS
-#         ${ENABLE_WARNINGS_AS_ERRORS})
-# endif()
-#
 
 # UNIT TEST
 add_subdirectory(Test)

@@ -16,7 +16,7 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "MINGW_TOOLCHAIN_PATH": "C:/MinGW/bin/",
         "ENABLE_WARNINGS": "ON",
-        "ENABLE_WARNINGS_AS_ERRORS": "ON",
+        "ENABLE_WARNINGS_AS_ERRORS": "OFF",
         "CREATE_DOXYGEN_DOC": "OFF",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }

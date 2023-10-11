@@ -5,7 +5,10 @@ add_executable(notes
 
 # Link FreeRTOS as a static library
 target_link_libraries(notes
-                        )
+
+               INTERFACE
+               compiler_flags
+               )
 
 # target_include_directories(notes PUBLIC
   # Source/App/Modules/Communication/)

@@ -13,10 +13,10 @@
       "generator": "MinGW Makefiles",
       "binaryDir": "${sourceDir}/Build",
       "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
         "MINGW_TOOLCHAIN_PATH": "C:/MinGW/bin/",
-        "ENABLE_FREERTOS_SYMBOLIC_LINK": "ON",
         "ENABLE_WARNINGS": "ON",
-        "ENABLE_WARNINGS_AS_ERRORS": "OFF",
+        "ENABLE_WARNINGS_AS_ERRORS": "ON",
         "CREATE_DOXYGEN_DOC": "OFF",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }

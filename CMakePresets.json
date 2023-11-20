@@ -7,25 +7,33 @@
   },
   "configurePresets": [
     {
-      "name": "simple",
+      "name": "basic",
       "displayName": "simple",
-      "description": "Default build for MinGW",
-      "generator": "MinGW Makefiles",
       "binaryDir": "${sourceDir}/Build",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "MINGW_TOOLCHAIN_PATH": "C:/MinGW/bin/",
         "ENABLE_WARNINGS": "ON",
         "ENABLE_WARNINGS_AS_ERRORS": "OFF",
         "CREATE_DOXYGEN_DOC": "OFF",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "MinGW-Debug",
+      "inherits":"basic",
+      "description": "Default build for MinGW compiler",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/Build_MinGW",
+      "toolchainFile": "${sourceDir}/cmake/mingw-toolchain.cmake",
+      "cacheVariables":{
+        "CMAKE_BUILD_TYPE": "Debug",
+        "MINGW_TOOLCHAIN_PATH": "C:/MinGW/bin/"
       }
     }
   ],
   "buildPresets": [
     {
       "name": "dev",
-      "configurePreset": "simple"
+      "configurePreset": "basic"
     }
   ]
 }

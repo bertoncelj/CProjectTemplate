@@ -5,7 +5,6 @@ add_executable(notes
 
 # Link FreeRTOS as a static library
 target_link_libraries(notes
-
                INTERFACE
                compiler_flags
                )

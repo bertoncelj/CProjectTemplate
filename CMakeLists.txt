@@ -1,4 +1,3 @@
-include(Cmake/mingw-toolchain.cmake)
 cmake_minimum_required(VERSION 3.23)
 
 project(CProjectSkeleton 
@@ -23,7 +22,6 @@ option(ENABLE_WARNINGS_AS_ERRORS "Enable to treat warnings as errors." OFF)
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/Cmake/)
 include(ConfigGuard)
 include(FetchCMocka)
-include(mingw-toolchain)
 
 if(ENABLE_WARNINGS)
     include(Warnings)
@@ -42,9 +40,9 @@ add_executable(${PROJECT_NAME}
   App/main.c
 )
 
-target_link_libraries(${PROJECT_NAME} 
-                      PUBLIC 
-                      compiler_flags)
+# target_link_libraries(${PROJECT_NAME} 
+                      # PUBLIC 
+                      # compiler_flags)
 
 
 # UNIT TEST

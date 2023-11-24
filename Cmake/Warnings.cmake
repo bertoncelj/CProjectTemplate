@@ -21,5 +21,8 @@ set(msvc_c "$<COMPILE_LANG_AND_ID:C,MSVC>")
 target_compile_options(compiler_flags INTERFACE
   "$<${gcc_like_c}:$<BUILD_INTERFACE:${GCC_FLAGS};>>"
   "$<${msvc_c}:$<BUILD_INTERFACE:-W3>>"
+  "$<$<CONFIG:DEBUG>:-O0>"
+  "$<$<CONFIG:RELEASE>:-O3>"
+  
 )
 

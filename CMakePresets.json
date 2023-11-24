@@ -11,6 +11,7 @@
       "displayName": "simple",
       "binaryDir": "${sourceDir}/Build",
       "cacheVariables": {
+		"CMAKE_BUILD_TYPE": "Debug",
         "ENABLE_WARNINGS": "ON",
         "ENABLE_WARNINGS_AS_ERRORS": "OFF",
         "CREATE_DOXYGEN_DOC": "OFF",

@@ -19,7 +19,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 option(ENABLE_WARNINGS_AS_ERRORS "Enable to treat warnings as errors." OFF)
 # option(CREATE_DOXYGEN_DOC "Enable to run Doxygen script" OFF)
 
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/Cmake/)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
 include(ConfigGuard)
 include(FetchCMocka)
 
@@ -32,12 +32,12 @@ if(CREATE_DOXYGEN_DOC)
 endif()
 
 # Scrible
-add_subdirectory(Scrible)
+add_subdirectory(scrible)
 
 
 # Create main executable 
 add_executable(${PROJECT_NAME} 
-  App/main.c
+  app/main.c
 )
 
 # target_link_libraries(${PROJECT_NAME} 
@@ -46,7 +46,7 @@ add_executable(${PROJECT_NAME}
 
 
 # UNIT TEST
-add_subdirectory(Test)
+add_subdirectory(test)
 
 # -----------------------------------
 # DEVELOPER UTILS

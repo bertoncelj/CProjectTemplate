@@ -9,7 +9,7 @@
     {
       "name": "basic",
       "displayName": "simple",
-      "binaryDir": "${sourceDir}/Build",
+      "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
 		"CMAKE_BUILD_TYPE": "Debug",
         "ENABLE_WARNINGS": "ON",
@@ -23,7 +23,7 @@
       "inherits":"basic",
       "description": "Default build for MinGW compiler",
       "generator": "MinGW Makefiles",
-      "binaryDir": "${sourceDir}/Build_MinGW",
+      "binaryDir": "${sourceDir}/build/MinGW",
       "toolchainFile": "${sourceDir}/cmake/mingw-toolchain.cmake",
       "cacheVariables":{
         "CMAKE_BUILD_TYPE": "Debug",
@@ -34,7 +34,7 @@
   "buildPresets": [
     {
       "name": "dev",
-      "configurePreset": "basic"
+      "configurePreset": "MinGW-Debug"
     }
   ]
 }
